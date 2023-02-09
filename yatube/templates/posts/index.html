@@ -1,7 +1,8 @@
+{% load static %}
 {% extends 'base.html' %}
 {% block content %}
     <title>{{ title }}</title>
-  </head>
+  </head rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <body>
     <header>
       {% include 'includes/header.html' %}    
