@@ -1,11 +1,12 @@
 from django.contrib import admin
 
-from .models import Post
-from .models import Group
+from .models import Post, Group
 
 class PostAdmin(admin.ModelAdmin):
+    # Добавляем настройку, которая позволить изменять поле group в любом посте
+    list_editable = ('group',)
     # Перечисляем поля, которые должны отображаться в админке
-    list_display = ('pk', 'text', 'pub_date', 'author') 
+    list_display = ('pk', 'text', 'pub_date', 'author', 'group') 
     # Добавляем интерфейс для поиска по тексту постов
     search_fields = ('text',) 
     # Добавляем возможность фильтрации по дате
