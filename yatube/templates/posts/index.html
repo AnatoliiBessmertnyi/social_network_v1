@@ -21,14 +21,9 @@
             </li>
           </ul>
           <p>{{ post.text }}</p>    
-          <!-- Ссылка ведущая на страницу сообщества/группы -->
-          <!-- поле group — необязательное: пост можно создать и без указания --> 
-          <!-- группы. И ссылка вида {% url 'posts:group_posts' post.group.slug %} --> 
-          <!--сломается: ведь она ждёт аргумент. При попытке отрендерить шаблон с таким кодом возникнет -->
-          <!-- Поэтому добавлена проверка if-endif-->
           {% if post.group %}   
-          <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
-        {% endif %} 
+            <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
+          {% endif %} 
           {% if not forloop.last %}<hr>{% endif %}
         {% endfor %} 
         {% endblock %} 
