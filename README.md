@@ -1,18 +1,27 @@
+# Yatube Social Network
 
-# YaTube
-Social network for public your personal diary
+Этот проект представляет собой социальную сеть, где пользователи могут публиковать посты.
 
-## Description
-It's will the site, where any can create the self personal page. If you log in to it, you can see all notes this author
+## Модели
 
-### Технологии 
-Python 3.7 Django 2.2.19
+- `Post`: Модель для представления постов пользователей. Содержит текст поста, дату публикации, автора и группу.
+- `Group`: Модель для представления групп, в которых пользователи могут публиковать свои посты. Содержит название, слаг и описание группы.
 
+## URL-маршруты
 
-### Запуск проекта в dev-режиме 
-- Install and activate virtual environment
-- Install dependencies  from file equirements.txt ``` pip install -r requirements.txt ``` 
-- In folder with file manage.py use the comand: ``` python3 manage.py runserver ``` 
+- Главная страница (`/`): Показывает последние обновления на сайте.
+- Страница группы (`group/<slug:slug>/`): Показывает посты в определенной группе.
 
-### Autor
-Anatolii
+## Представления
+
+- `index`: Представление для отображения последних обновлений на сайте.
+- `group_posts`: Представление для отображения постов в определенной группе.
+
+## Используемые технологии
+
+- Python: Язык программирования.
+- Django: Фреймворк для веб-разработки на Python.
+
+## Автор
+
+Anatolii Bessmertnyi
